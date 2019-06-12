@@ -7,14 +7,12 @@ var connection = mysql.createConnection({
     user: "root",
     password: "Password01",
     database: "burgers_db"
-});
+})
 
 // Make connection.
 connection.connect(function (err) {
-    if (err) {
-        console.error("error connecting: " + err.stack);
-        return;
-    }
+    if (err) throw err;
+
     console.log("connected as id " + connection.threadId);
 });
 
